@@ -1,0 +1,966 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    font-weight: normal;
+    /* cursor: none; */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(6, 18, 35);
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.bg {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: burlywood; */
+    overflow: hidden;
+}
+
+.bg .shape {
+    position: relative;
+    width: 60%;
+    height: 70%;
+    /* background-color: chartreuse; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg .shape .shape1 {
+    /* display: none; */
+    width: auto;
+    height: 100%;
+    position: absolute;
+    /* top: 0; */
+    /* margin: auto; */
+    /* background-color: darkcyan; */
+    opacity: 15%;
+    transition: 2s 0.3s;
+    transform-origin: center;
+}
+
+.bg .shape .shape1:nth-child(1),
+.bg .shape .shape2:nth-child(1) {
+    animation: rotate 80s infinite linear reverse forwards;
+}
+.bg .shape .shape1:nth-child(2),
+.bg .shape .shape2:nth-child(2) {
+    animation: rotate 55s infinite linear forwards;
+}
+.bg .shape .shape1:nth-child(3),
+.bg .shape .shape2:nth-child(3) {
+    animation: rotate 40s infinite linear forwards;
+}
+.bg .shape .shape1:nth-child(4),
+.bg .shape .shape2:nth-child(4) {
+    animation: rotate 70s infinite linear reverse forwards;
+}
+.bg .shape .shape1:nth-child(5),
+.bg .shape .shape2:nth-child(5) {
+    animation: rotate 60s infinite linear forwards;
+}
+.bg .shape .shape1:nth-child(6),
+.bg .shape .shape2:nth-child(6) {
+    animation: rotate 70s infinite linear reverse forwards;
+}
+.bg .shape .shape1:nth-child(7),
+.bg .shape .shape2:nth-child(7) {
+    animation: rotate 40s infinite linear forwards;
+}
+
+.bg .shape .shape2.active:nth-child(1) {
+    opacity: 10%;
+}
+
+.bg .shape .shape2.active:nth-child(2) {
+    opacity: 20%;
+}
+
+.bg .shape .shape2.active:nth-child(3) {
+    opacity: 30%;
+}
+
+.bg .shape .shape2.active:nth-child(4) {
+    opacity: 40%;
+}
+
+.bg .shape .shape2.active:nth-child(5) {
+    opacity: 50%;
+}
+
+.bg .shape .shape2.active:nth-child(6) {
+    opacity: 60%;
+}
+
+.bg .shape .shape2.active:nth-child(7) {
+    opacity: 70%;
+}
+
+.bg .shape .shape1.active {
+    animation-play-state: paused;
+    /* width: 150%; */
+    /* top: -150px !important; */
+    /* left: -100px !important; */
+    /* margin: inherit; */
+    height: 150%;
+    opacity: 0;
+    transition: 2s 0.7s;
+}
+
+.bg .shape .bgmenu {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: chocolate; */
+}
+
+.bg .shape .bgmenu .shape2 {
+    position: absolute;
+    /* top: 0; */
+    height: 100%;
+    /* margin: auto; */
+    /* background-color: cadetblue; */
+    transition: 2s 0.3s;
+    transform-origin: center;
+    opacity: 0;
+}
+
+.bg .shape .shape2.active {
+    animation-play-state: paused;
+    /* width: 150%; */
+    height: 150%;
+    transition: 2s 0.7s;
+}
+
+.bg .squareout {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-color: blueviolet; */
+}
+
+.bg .squareout .sql {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    /* background-color: chartreuse; */
+    transition: 1.5s;
+}
+
+.bg .squareout .sql .sqleft1 {
+    height: 300%;
+    opacity: 25%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: roll 20s ease-in-out infinite alternate;
+}
+
+.bg .squareout .sql .sqleft2 {
+    height: 300%;
+    opacity: 25%;
+    position: absolute;
+    top: -70;
+    left: 0;
+    animation: roll 15s ease-in-out infinite alternate-reverse;
+}
+.bg .squareout .sql .sqleft3 {
+    height: 300%;
+    opacity: 25%;
+    position: absolute;
+    top: -100;
+    left: 0;
+    animation: roll 13s ease-in-out infinite alternate;
+}
+.bg .squareout .sql .sqleft4 {
+    height: 300%;
+    opacity: 25%;
+    position: absolute;
+    top: -120;
+    left: 0;
+    animation: roll 10s ease-in-out infinite alternate-reverse;
+}
+
+.bg .squareout .sql.active {
+    left: -100%;
+    transition: 2s 0.7s;
+}
+
+.bg .squareout .sqr {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: auto;
+    /* background-color: chartreuse; */
+    transition: 1.5s;
+}
+
+.bg .squareout .sqr .sqright1 {
+    height: 300%;
+    opacity: 25%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: roll 20s ease-in-out infinite alternate;
+}
+
+.bg .squareout .sqr .sqright2 {
+    height: 300%;
+    opacity: 25%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: roll 17s ease-in-out infinite alternate-reverse;
+}
+
+.bg .squareout .sqr .sqright3 {
+    height: 300%;
+    opacity: 25%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: roll 14s ease-in-out infinite alternate;
+}
+
+.bg .squareout .sqr .sqright4 {
+    height: 300%;
+    opacity: 25%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: roll 10s ease-in-out infinite alternate-reverse;
+}
+
+.bg .squareout .sqr.active {
+    right: -100%;
+    transition: 2s 0.7s;
+}
+
+nav .container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 150px;
+    padding: 0 80px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
+
+nav .container .menu {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: start;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav .container .menu.active {
+    background-color: white;
+    transition: 0.3s;
+}
+
+nav .container .menu a {
+    /* background-color: rgb(255, 255, 255, 0.4); */
+    position: absolute;
+    /* top: 12px; */
+    /* left: -5px; */
+    opacity: 0;
+    width: 0px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+nav .container .menu:hover > a {
+    opacity: 100%;
+    width: 100%;
+    height: 100%;
+}
+nav .container .menu a.active {
+    opacity: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+nav .container .menu p {
+    position: relative;
+    left: 0;
+    /* background-color: burlywood; */
+    transition: 0.3s;
+}
+
+nav .container .menu p.active {
+    opacity: 0;
+}
+
+nav .container .menu:hover > p {
+    opacity: 0;
+    left: -100%;
+}
+
+nav .container .menu a .hamburger {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+nav .container .menu a .hamburger hr {
+    position: relative;
+    margin: 3px 0;
+    width: 100%;
+    transition: 0.3s;
+}
+
+nav .container .menu a .hamburger hr.active {
+    animation: none !important;
+}
+
+nav .container .menu a .hamburger hr:nth-child(1).active {
+    height: 4px;
+    width: 30px;
+    background-color: black !important;
+    border: none;
+    transform-origin: 0 0;
+    transform: rotate(45deg) translate(4px, -10px);
+    border-radius: 100px;
+    transition: 0.3s;
+}
+nav .container .menu a .hamburger hr:nth-child(2).active {
+    display: none;
+}
+nav .container .menu a .hamburger hr:nth-child(3).active {
+    height: 4px;
+    width: 30px;
+    background-color: black !important;
+    border: none;
+    transform-origin: 0 0;
+    transform: rotate(-45deg) translate(1px, 10px);
+    border-radius: 100px;
+    transition: 0.3s;
+}
+
+nav .container .menu a .hamburger hr:nth-child(1) {
+    color: white;
+    animation: wider 2s infinite alternate-reverse linear;
+}
+nav .container .menu a .hamburger hr:nth-child(2) {
+    color: white;
+    animation: wider 1s infinite alternate-reverse linear;
+}
+nav .container .menu a .hamburger hr:nth-child(3) {
+    color: turquoise;
+    animation: wider 1s infinite alternate linear;
+}
+
+nav .container .logo {
+    justify-self: center;
+}
+
+nav .container .logo a {
+    font-family: "Thasadith", sans-serif;
+    font-size: 1.7em;
+    letter-spacing: 2px;
+}
+
+nav .container .port {
+    justify-self: end;
+    position: relative;
+    transition: 1.5s 1.5s;
+}
+
+nav .container .port.active {
+    transform: translateX(200%) scale(0);
+    transition: 1s 0.7s;
+}
+
+.bottom .container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 140px;
+    padding: 0 80px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.bottom .container .review {
+    justify-self: start;
+    transition: 1.5s 2s;
+}
+
+.bottom .container .review.active {
+    transform: translateX(-200%) scale(0);
+    transition: 1s 0.7s;
+}
+
+.bottom .container .review a,
+nav .container .port a {
+    /* background-color: sienna; */
+    position: relative;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.bottom .container .review a:hover,
+nav .container .port a:hover {
+    transform: scale(1.15) translateX(4px);
+    transition: 0.3s;
+}
+
+.bottom .container .review a .point,
+nav .container .port a {
+    transition: 0.3s;
+}
+
+.bottom .container .review a:hover > .point,
+nav .container .port a:hover > .point {
+    animation: move 0.5s infinite alternate;
+    transition: 0.3s;
+}
+
+.bottom .container .review a:hover > .point i,
+nav .container .port a:hover > .point i {
+    color: rgb(255, 68, 68);
+    transition: 0.3s;
+}
+
+.bottom .container .review a:hover > hr,
+nav .container .port a:hover > hr {
+    color: rgb(255, 68, 68);
+    animation: hrwider 2s infinite alternate-reverse linear;
+    transition: 0.3s;
+}
+
+.bottom .container .review .fallback {
+    animation: fallback 1s;
+}
+
+.bottom .container .review i,
+nav .container .port a i {
+    position: absolute;
+    left: -22px;
+    top: -4px;
+    pointer-events: none;
+    color: turquoise;
+}
+
+.bottom hr,
+nav hr {
+    color: turquoise;
+    width: 20%;
+    pointer-events: none;
+}
+
+.bottom .container .secret {
+    justify-self: end;
+}
+
+.bottom .container .secret a {
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 20px;
+    /* background-color: palegreen; */
+}
+
+.bottom .container .secret a p {
+    position: absolute;
+    color: hsl(41, 100%, 68%);
+    opacity: 0%;
+    transition: 0.3s;
+}
+
+.bottom .container .secret a i {
+    position: absolute;
+    left: 0;
+    top: -2px;
+    color: hsl(41, 100%, 50%);
+    pointer-events: none;
+    opacity: 20%;
+    transition: 0.3s;
+}
+
+.bottom .container .secret a:hover > .point i {
+    left: -25px;
+    color: hsl(41, 100%, 68%);
+    transform: rotate(72deg);
+    opacity: 100%;
+    transition: 0.3s;
+}
+
+.bottom .container .secret a:hover > p {
+    opacity: 100%;
+    transition: 0.3s;
+}
+
+.bottom .container .port {
+    display: none;
+}
+
+main {
+    position: absolute;
+    top: 100px;
+    bottom: 100px;
+    width: 100%;
+    /* background-color: thistle; */
+    box-sizing: border-box;
+    padding: 70px 20%;
+    display: flex;
+    align-items: center;
+}
+
+main .container {
+    /* background-color: whitesmoke; */
+    width: 100%;
+    max-width: 900px;
+    min-height: 300px;
+    max-height: 400px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    /* background-color: tomato; */
+}
+
+main .container a h1 {
+    font-size: 4em;
+    font-weight: 200;
+    transition: 0.3s;
+}
+
+main .container div {
+    position: absolute;
+}
+
+main .container .plus {
+    /* background-color: tomato; */
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    font-size: 2.5em;
+    font-family: "Courier", monospace;
+    color: turquoise;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 3px solid turquoise;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+main .container p {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    transition: 0.3s;
+}
+
+main .container .about .plus {
+    position: absolute;
+    top: -20px;
+    right: -50px;
+}
+
+main .container .about.active {
+    transform: translateY(50%);
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+main .container .services .plus {
+    position: absolute;
+    top: -20px;
+    right: -45px;
+}
+
+main .container .services.active {
+    transform: translateY(50%);
+    opacity: 0;
+    transition: 0.3s;
+    transition-delay: 0.15s;
+    pointer-events: none;
+}
+main .container .connect .plus {
+    position: absolute;
+    top: -20px;
+    right: -45px;
+}
+
+main .container .connect.active {
+    transform: translateY(50%);
+    opacity: 0;
+    transition: 0.3s;
+    transition-delay: 0.3s;
+    pointer-events: none;
+}
+
+main .container .about {
+    top: 0;
+    left: 0;
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.7s 2.8s;
+}
+
+main .container .about a {
+    display: inline-block;
+    /* background-color: violet; */
+}
+
+main .container a:hover > h1 {
+    transform: scale(1.1) translateX(10px);
+    transition: 0.3s;
+}
+
+main .container a:hover > p {
+    transform: translateY(5px);
+    transition: 0.3s;
+}
+
+main .container a:hover > .plus {
+    color: rgb(255, 68, 68);
+    border-color: rgb(255, 68, 68);
+    font-size: 65px;
+    width: 45.5px;
+    height: 45.5px;
+    transition: 0.3s;
+}
+
+main .container .about a:hover > .plus {
+    right: -90px;
+    animation: rotate 1s infinite linear;
+}
+main .container .services a:hover > .plus {
+    right: -90px;
+    animation: rotate 1s infinite ease-in-out;
+}
+main .container .connect a:hover > .plus {
+    right: -90px;
+    animation: rotate 1s infinite ease-in-out alternate-reverse;
+}
+
+main .container .services {
+    right: 0;
+    top: 40%;
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.7s 2.8s;
+}
+
+main .container .connect {
+    bottom: 0;
+    left: 10%;
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.7s 2.8s;
+}
+
+menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* padding-top: 50px; */
+    /* box-sizing: border-box; */
+    /* background-color: brown; */
+    pointer-events: none;
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+menu.active {
+    /* display: flex; */
+    opacity: 100%;
+    transition: 0.5s 2s;
+}
+menu div {
+    margin: 18px;
+    transition: 0.1s;
+    pointer-events: all;
+}
+
+menu div:first-child {
+    box-shadow: 0 20px 14px -16px rgb(255, 68, 68) !important;
+}
+
+menu div h1 {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+menu div:hover {
+    box-shadow: 0 20px 14px -16px turquoise;
+    /* transform: scale(1.2); */
+    transition: 0.3s;
+}
+
+@media (max-width: 1200px) {
+    .bg .shape {
+        width: 40%;
+        height: 60%;
+    }
+}
+
+@media (max-width: 1024px) {
+    main {
+        padding: 0;
+    }
+
+    main .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    main .container div {
+        position: relative;
+        margin: 30px 0;
+    }
+
+    main .container .about {
+        top: auto;
+        left: auto;
+    }
+
+    main .container .services {
+        top: auto;
+        right: auto;
+    }
+
+    main .container .connect {
+        top: auto;
+        left: auto;
+    }
+
+    main .container .about .plus {
+        width: 25px;
+        height: 25px;
+        font-size: 2em;
+        border-width: 2px;
+        top: -30px;
+    }
+    main .container .services .plus {
+        width: 25px;
+        height: 25px;
+        font-size: 2em;
+        border-width: 2px;
+    }
+    main .container .connect .plus {
+        width: 25px;
+        height: 25px;
+        font-size: 2em;
+        border-width: 2px;
+    }
+
+    .bg .squareout .sql {
+        left: -50px;
+    }
+    .bg .squareout .sqr {
+        right: -50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bg .squareout {
+        display: none;
+    }
+
+    .bottom .container {
+        height: 79px;
+        grid-template-columns: 1fr;
+    }
+
+    .secret {
+        display: none !important;
+    }
+
+    .bottom .container .review {
+        justify-self: center;
+    }
+
+    /* .bottom {
+        display: none;
+    } */
+
+    nav .container {
+        height: 90px;
+        grid-template-columns: 1fr 1.5fr 1fr;
+        padding: 0 40px;
+    }
+    nav .container .menu a {
+        opacity: 100%;
+        width: 100%;
+        height: 100%;
+    }
+    nav .container .menu p {
+        opacity: 0;
+    }
+    main .container a h1 {
+        font-size: 3em;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    main .container .about .plus {
+        top: -25px;
+        right: 10px;
+    }
+    main .container .services .plus {
+        top: -25px;
+        right: -10px;
+    }
+    main .container .connect .plus {
+        top: -25px;
+        right: -14px;
+    }
+    nav .container .logo a {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 400px) {
+    nav .container {
+        grid-template-columns: 1fr 1fr;
+    }
+    nav .container .logo {
+        justify-self: flex-end;
+    }
+
+    nav .container .port {
+        display: none;
+    }
+
+    .bottom .container .review {
+        display: none;
+    }
+
+    .bottom .container .port {
+        display: block;
+        position: relative;
+        bottom: 0;
+        justify-self: center;
+        transition: 2s;
+        transition: 1s 1.5s;
+    }
+
+    .bottom .container .port i {
+        position: absolute;
+        left: -22px;
+        top: -4px;
+        pointer-events: none;
+        color: turquoise;
+    }
+
+    .bottom .container .port.active {
+        transform: translateY(200%) scale(0);
+        transition: 0.7s 1s;
+    }
+}
+
+@media (max-height: 700px) {
+    main .container div {
+        margin: 15px 0;
+    }
+}
+
+@keyframes rotate {
+    0% {
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes roll {
+    0% {
+    }
+    100% {
+        top: -500px;
+    }
+}
+@keyframes roll2 {
+    0% {
+    }
+    100% {
+        top: 500px;
+    }
+}
+
+@keyframes wider {
+    0% {
+        width: 90%;
+    }
+    100% {
+        width: 60%;
+    }
+}
+@keyframes hrwider {
+    0% {
+        width: 80%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes move {
+    0% {
+    }
+    100% {
+        transform: translateX(-5px);
+    }
+}
+
+@keyframes fallback {
+    0% {
+    }
+
+    100% {
+        transform: translateX(5px);
+    }
+}
