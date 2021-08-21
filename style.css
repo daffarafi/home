@@ -721,7 +721,10 @@ menu.active {
 }
 menu div {
     margin: 18px;
-    transition: 0.1s;
+    pointer-events: none;
+}
+
+menu div.active {
     pointer-events: all;
 }
 
@@ -744,6 +747,13 @@ menu div:hover {
     .bg .shape {
         width: 40%;
         height: 60%;
+    }
+
+    .bg .squareout .sql {
+        left: -50px;
+    }
+    .bg .squareout .sqr {
+        right: -50px;
     }
 }
 
@@ -798,19 +808,12 @@ menu div:hover {
         border-width: 2px;
     }
 
-    .bg .squareout .sql {
-        left: -50px;
-    }
-    .bg .squareout .sqr {
-        right: -50px;
+    .bg .squareout {
+        display: none;
     }
 }
 
 @media (max-width: 768px) {
-    .bg .squareout {
-        display: none;
-    }
-
     .bottom .container {
         height: 79px;
         grid-template-columns: 1fr;
@@ -848,15 +851,15 @@ menu div:hover {
     }
     main .container .about .plus {
         top: -25px;
-        right: 10px;
+        right: -40px;
     }
     main .container .services .plus {
         top: -25px;
-        right: -10px;
+        right: -40px;
     }
     main .container .connect .plus {
         top: -25px;
-        right: -14px;
+        right: -50px;
     }
     nav .container .logo a {
         font-size: 1.2em;
