@@ -721,6 +721,8 @@ menu.active {
 }
 menu div {
     margin: 18px;
+    transition: 0.1s;
+
     pointer-events: none;
 }
 

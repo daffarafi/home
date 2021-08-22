@@ -155,6 +155,7 @@ $(".menu").click(function () {
     $("nav .container .port").toggleClass("active");
     $(".bottom .container .review").toggleClass("active");
     $("menu").toggleClass("active");
+    $("menu div").toggleClass("active");
     $(".bottom .container .port").toggleClass("active");
 
     // $('.bg .shape .shape1:nth-child(8)').toggleClass("show")
